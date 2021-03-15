@@ -23,6 +23,12 @@ class Human:
         return f'{self.man}と{self.girl}'
 
 
+class Upper(Human):
+    def output(self):
+        age = super().output()
+        return age.upper()
+
+
 class Drink:
     def __init__(self, kind, num):
         self.kind = kind
@@ -72,6 +78,12 @@ print(human_man)
 human_name.girl_ = 'bunbunko'
 name = human_name.output()
 print(name)
+
+name_upper = Upper('bunbunjin')
+print(name_upper.output())
+
+name_upper.girl = 'bunbunko'
+print(name_upper.output())
 
 drink_order = Drink('Coffee', 1)
 drink_order.price = 500
